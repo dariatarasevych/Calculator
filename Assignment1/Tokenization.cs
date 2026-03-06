@@ -24,8 +24,10 @@ public class Tokenization
             }
 
             if (s == ' ') continue;
-            tokens[index] = s.ToString();
-            index++;
+            if (s == '+' || s == '-' || s == '*' || s == '/' || s == '(' || s == ')') 
+            {
+               tokens[index++] = s.ToString();
+            }
          }
       }
 

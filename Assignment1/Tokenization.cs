@@ -29,7 +29,7 @@ public class Tokenization
 
             if (s == ' ') continue;
             
-            if (s == '+' || s == '-' || s == '*' || s == '/' || s == '(' || s == ')') 
+            if (s == '+' || s == '-' || s == '*' || s == '/' || s == '(' || s == ')' || s == '^') 
             {
                tokens[index++] = s.ToString();
             }

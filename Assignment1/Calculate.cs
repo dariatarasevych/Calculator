@@ -24,6 +24,7 @@ public class Calculate
                     case "+": result = left + right; break;
                     case "-": result = left - right; break;
                     case "*": result = left * right; break;
+                    case "^": result = Math.Pow(left, right); break;
                     case "/": 
                         if (right == 0)
                         {

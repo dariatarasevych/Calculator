@@ -4,6 +4,10 @@ public class Tokenization
 {
    public static string[] Tokenize(string input)
    {
+      if (string.IsNullOrWhiteSpace(input))
+      {
+         throw new Exception("Not valid input/empty input");
+      }
       string[] tokens = new string[100];
       int index = 0;
       string buffer = "";
@@ -24,9 +28,14 @@ public class Tokenization
             }
 
             if (s == ' ') continue;
+            
             if (s == '+' || s == '-' || s == '*' || s == '/' || s == '(' || s == ')') 
             {
                tokens[index++] = s.ToString();
+            }
+            else
+            {
+               throw new Exception("Not valid input");
             }
          }
       }

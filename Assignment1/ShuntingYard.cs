@@ -56,13 +56,12 @@ public class ShuntingYard
                 {
                     outputPostfix[outputIndex++] = opStack.Pull();
                 }
-                if (!opStack.IsEmpty())
+                if (!opStack.IsEmpty() && opStack.Peek() == "(")
                 {
-                    throw new Exception("Mismatched parentheses"); // непарна кількість дужок
+                    opStack.Pull(); // видалити цю віжкриту дужку з стеку
                 }
-                opStack.Pull();
             }
-            
+
             else
             {
                 throw new Exception("Invalid token");

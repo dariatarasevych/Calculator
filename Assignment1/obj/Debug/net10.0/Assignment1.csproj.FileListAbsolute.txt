@@ -12,3 +12,4 @@
 /Users/daratarasevic/RiderProjects/Assignment1/Assignment1/obj/Debug/net10.0/Assignment1.pdb
 /Users/daratarasevic/RiderProjects/Assignment1/Assignment1/obj/Debug/net10.0/Assignment1.genruntimeconfig.cache
 /Users/daratarasevic/RiderProjects/Assignment1/Assignment1/obj/Debug/net10.0/ref/Assignment1.dll
+/Users/daratarasevic/RiderProjects/Assignment1/Assignment1/obj/Debug/net10.0/Assignment1.sourcelink.json

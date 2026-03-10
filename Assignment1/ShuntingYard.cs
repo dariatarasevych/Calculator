@@ -16,7 +16,7 @@ public class ShuntingYard
             string token = tokens[i];
             i++;
 
-            if (int.TryParse(token, out _))
+            if (int.TryParse(token, out _)) //якщо число - кладемо в outputPostfix
             {
                 outputPostfix[outputIndex] = token;
                 outputIndex++;
@@ -31,7 +31,7 @@ public class ShuntingYard
                         break;
                     }
 
-                    if (GetPrecedence(topElement) >= GetPrecedence(token))
+                    if (GetPrecedence(topElement) >= GetPrecedence(token)) // перевірити пріорітетність
                     {
                         outputPostfix[outputIndex] = opStack.Pull();
                         outputIndex++;
@@ -56,10 +56,16 @@ public class ShuntingYard
                 {
                     outputPostfix[outputIndex++] = opStack.Pull();
                 }
-                if (!opStack.IsEmpty() && opStack.Peek() == "(")
+                if (!opStack.IsEmpty())
                 {
-                    opStack.Pull(); // видалити цю віжкриту дужку з стеку
+                    throw new Exception("Mismatched parentheses"); // непарна кількість дужок
                 }
+                opStack.Pull();
+            }
+            
+            else
+            {
+                throw new Exception("Invalid token");
             }
         }
 
@@ -76,11 +82,7 @@ public class ShuntingYard
     }
     private bool IsOperator(string token)
     {
-        return token == "+" ||
-               token == "-" ||
-               token == "*" ||
-               token == "/" ||
-               token == "^";
+        return token == "+" || token == "-" || token == "*" || token == "/" || token == "^";
     }
     
     private int GetPrecedence(string op)

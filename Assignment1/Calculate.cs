@@ -37,6 +37,6 @@ public class Calculate
             }
         }
 
-        return double.Parse(stack.Pull()); // останнє число дістаємо
+        return double.Parse(stack.Pull()); // останнє число дістаємо це і є відповідь
     }
 }

@@ -52,7 +52,6 @@ public class Tokenization
       {
          result[i] = tokens[i];
       }
-
       return result;
    }
 }
